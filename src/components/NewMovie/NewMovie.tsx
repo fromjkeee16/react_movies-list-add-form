@@ -45,7 +45,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
 
   const validateUrl = (value: string) => pattern.test(value);
 
-  const areFieldsOk = !(
+  const areFieldsNotOk = !(
     (title && imgUrl && imdbId && imdbUrl) /*&&
     validateUrl(imdbId) &&
     validateUrl(imdbUrl)*/
@@ -107,7 +107,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
             type="submit"
             data-cy="submit-button"
             className="button is-link"
-            disabled={areFieldsOk}
+            disabled={areFieldsNotOk}
           >
             Add
           </button>

@@ -46,9 +46,10 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
   const validateUrl = (value: string) => pattern.test(value);
 
   const areFieldsNotOk = !(
-    (title && imgUrl && imdbId && imdbUrl) /*&&
-    validateUrl(imdbId) &&
-    validateUrl(imdbUrl)*/
+    title.trim() &&
+    imgUrl.trim() &&
+    imdbId.trim() &&
+    imdbUrl.trim()
   );
 
   return (
